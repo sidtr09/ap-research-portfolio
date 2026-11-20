@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sim → Real · Siddharth Tirumalareddi · AP Research</title>
+  <meta name="description" content="AP Research digital portfolio of Siddharth Tirumalareddi: curriculum learning via simulation-to-reality discrepancy for budget-constrained autonomous racing on a 1/10-scale F1TENTH car.">
+  <meta property="og:title" content="Sim → Real · Siddharth Tirumalareddi">
+  <meta property="og:description" content="Teaching a 1/10-scale autonomous race car to learn where reality disagrees with simulation.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4f00'/%3E%3Ctext x='16' y='21.5' font-family='Arial' font-weight='800' font-size='14' fill='white' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="brand"><span class="brand-mark">ST</span><span>Siddharth T. <small>/ AP RESEARCH</small></span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about"><span class="num">01</span>About</a></li>
+      <li><a href="#process"><span class="num">02</span>Process</a></li>
+      <li><a href="#build"><span class="num">03</span>Build</a></li>
+      <li><a href="#data"><span class="num">04</span>Data</a></li>
+      <li><a href="#perspective"><span class="num">05</span>Perspective</a></li>
+      <li><a href="#contact"><span class="num">06</span>Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow mono">
+        <span>AP Research 2026–27</span>
+        <span>Robotics &amp; Intelligent Machines</span>
+      </div>
+      <h1 class="display">Racing the <span class="serif">reality</span> gap.</h1>
+      <p class="official-title">Curriculum Learning via Simulation-to-Reality Discrepancy for Budget-Constrained Autonomous Racing</p>
+      <p class="hero-lead">I'm teaching a small self-driving race car to learn faster by practicing on the tracks where my <button type="button" class="term" data-term="simulator">simulator</button> is most wrong.</p>
+      <div class="byline">
+        <strong>Siddharth Tirumalareddi</strong>
+        <span class="mono">Grade 12 · Individual project</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#about" class="btn btn-signal">About me <span class="arrow">→</span></a>
+        <a href="#process" class="btn btn-ghost">How the study works</a>
+      </div>
+    </div>
+
+    <figure class="track-fig">
+      <div class="track-card">
+        <div class="track-head">
+          <span class="mono live">Sim vs. real</span>
+          <span class="mono">Track 01 · 156.4 m</span>
+        </div>
+        <svg id="track-svg" viewBox="-20 -20 1080 817" role="img" aria-label="A race track outline with two cars, one simulated and one physical, lapping it at slightly different speeds.">
+          <path id="track-path" class="track-base" d="M1019.9,500.0 L1018.0,477.6 L1014.0,455.4 L1007.8,433.7 L999.6,412.7 L989.1,392.7 L976.6,374.0 L961.9,356.9 L945.6,341.4 L927.8,327.5 L908.9,315.3 L889.1,304.4 L868.6,294.9 L847.7,286.6 L826.4,279.2 L804.8,272.7 L783.0,266.7 L761.2,261.2 L739.2,255.9 L717.3,250.7 L695.4,245.4 L673.5,239.7 L651.8,233.6 L630.3,226.9 L609.1,219.3 L588.2,210.7 L567.9,200.9 L548.3,189.9 L529.3,177.7 L510.9,164.6 L493.0,150.9 L475.4,136.8 L458.0,122.5 L440.6,108.1 L423.0,94.0 L405.1,80.3 L386.7,67.3 L367.6,55.2 L347.9,44.3 L327.3,35.1 L306.0,27.7 L284.1,22.6 L261.7,20.2 L239.1,20.7 L216.8,23.9 L195.1,29.7 L174.0,37.9 L154.2,48.5 L136.2,62.1 L121.3,79.0 L110.9,98.9 L106.7,120.9 L108.5,143.4 L114.6,165.1 L123.3,185.9 L133.1,206.2 L142.7,226.6 L150.9,247.6 L156.0,269.5 L156.4,292.0 L150.3,313.6 L137.1,331.8 L119.8,346.2 L100.7,358.2 L81.6,370.3 L64.1,384.4 L49.5,401.6 L38.1,421.0 L29.6,441.9 L24.0,463.7 L20.8,486.0 L20.0,508.5 L21.2,531.1 L24.0,553.4 L28.3,575.6 L33.7,597.5 L39.9,619.1 L46.9,640.6 L54.9,661.7 L64.4,682.1 L76.0,701.4 L89.9,719.2 L106.3,734.6 L125.3,746.6 L146.5,754.2 L168.9,756.9 L191.3,755.3 L213.2,750.0 L234.2,741.7 L254.1,731.1 L272.9,718.6 L290.7,704.8 L307.6,689.9 L324.1,674.5 L340.2,658.7 L356.3,642.9 L372.7,627.5 L389.7,612.7 L407.5,598.8 L426.4,586.4 L446.3,575.8 L467.2,567.6 L489.1,562.0 L511.4,558.9 L533.9,558.1 L556.5,559.2 L578.8,562.0 L601.0,566.3 L622.8,571.8 L644.4,578.3 L665.8,585.6 L687.0,593.3 L708.0,601.4 L729.0,609.6 L750.1,617.5 L771.4,625.1 L792.8,632.1 L814.5,638.2 L836.5,643.1 L858.8,646.6 L881.3,648.3 L903.8,647.6 L926.1,644.0 L947.5,637.1 L967.3,626.4 L984.4,611.8 L998.1,593.9 L1008.2,573.7 L1015.0,552.3 L1018.8,530.1 L1020.0,507.5 Z"/>
+          <use href="#track-path" class="track-edge"/>
+          <path id="trail-sim" class="track-trail-sim" d=""/>
+          <path id="trail-real" class="track-trail-real" d=""/>
+          <line x1="1000" y1="500" x2="1040" y2="500" stroke="#ecebe6" stroke-width="4" stroke-dasharray="4 4"/>
+          <g id="car-sim"><circle r="16" fill="#4c6ef5" opacity="0.25"/><circle r="8" fill="#4c6ef5" stroke="#0e0f11" stroke-width="3"/></g>
+          <g id="car-real"><circle r="16" fill="#ff4f00" opacity="0.25"/><circle r="8" fill="#ff4f00" stroke="#0e0f11" stroke-width="3"/></g>
+        </svg>
+        <div class="telemetry">
+          <div class="tel"><span class="mono"><i class="swatch sim"></i>Sim car</span><div class="val" id="tel-sim">0.0 m</div></div>
+          <div class="tel"><span class="mono"><i class="swatch real"></i>Real car</span><div class="val" id="tel-real">0.0 m</div></div>
+          <div class="tel"><span class="mono">Gap Δ</span><div class="val" id="tel-gap" style="color:#ff4f00">0.0 m</div></div>
+        </div>
+      </div>
+      <figcaption class="track-caption">This animation uses the real track from my simulator. The blue dot is the simulated car and the orange dot is the real car. The real car falls behind because of wheel slip, sensor delay, and other things the simulator gets wrong. That gap is what my study measures.</figcaption>
+    </figure>
+  </div>
+
+  <div class="facts-strip">
+    <div class="wrap">
+      <div class="fact"><div class="big">15,000</div><span class="mono">Real-world <button type="button" class="term" data-term="step">steps</button> (about 30 min)</span></div>
+      <div class="fact"><div class="big">2 × 5</div><span class="mono">2 strategies, 5 runs each</span></div>
+      <div class="fact"><div class="big">3</div><span class="mono"><button type="button" class="term" data-term="unseen">Unseen</button> test tracks</span></div>
+      <div class="fact"><div class="big">α=.05</div><span class="mono"><button type="button" class="term" data-term="welch">Welch's t-test</button></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>F1TENTH Gym</span><span>Proximal Policy Optimization</span><span>Raspberry Pi 5</span><span>ESP32-S3</span><span>LD19 2D LiDAR</span><span>Stable-Baselines3</span><span>Sim-to-real transfer</span><span>Automated curriculum learning</span>
+    <span>F1TENTH Gym</span><span>Proximal Policy Optimization</span><span>Raspberry Pi 5</span><span>ESP32-S3</span><span>LD19 2D LiDAR</span><span>Stable-Baselines3</span><span>Sim-to-real transfer</span><span>Automated curriculum learning</span>
+  </div>
+</div>
+
+<main>
+<!-- ================= 01 ABOUT (PERSONAL) ================= -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-index"><span class="n">01</span><span class="cat">Personal</span></div>
+      <div>
+        <h2 class="sec-title">About <span class="serif">me</span></h2>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <!-- To use a real photo: save it as assets/headshot.jpg, add class "has-photo" to .portrait, and uncomment the <img>. -->
+      <div class="portrait reveal" id="portrait">
+        <!-- <img src="assets/headshot.jpg" alt="Portrait of Siddharth Tirumalareddi"> -->
+        <div class="initials">S<span>T</span></div>
+        <div class="tagline mono"><span>Siddharth T.</span><span>Class of 2027</span></div>
+      </div>
+
+      <div class="reveal">
+        <p class="bio-lead">Hi, I'm a senior and an aspiring <span class="serif">computer engineer</span> who is really interested in <button type="button" class="term" data-term="embedded">embedded AI</button> and robots.</p>
+        <p class="bio-body">For AP Research, I'm studying a common problem in robotics. A driving <button type="button" class="term" data-term="policy">policy</button> that works well in a <button type="button" class="term" data-term="simulator">simulator</button> often struggles on a real car. Practicing on the real car is expensive: batteries run out, parts break, and someone has to reset the car after every crash. My question is whether the car can learn faster if it spends its limited real-world practice on the tracks where the simulator is most wrong.</p>
+
+        <div class="meta-row">
+          <div><span class="mono">Grade</span><b>12 · AP Research</b></div>
+          <div><span class="mono">Category</span><b>Robotics (ROBO)</b></div>
+          <div><span class="mono">Focus</span><b>Robot learning</b></div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Python · PyTorch</span>
+          <span class="chip">Stable-Baselines3 (PPO)</span>
+          <span class="chip">F1TENTH Gym</span>
+          <span class="chip">ONNX</span>
+          <span class="chip">C++ · ESP32-S3</span>
+          <span class="chip">UART · PWM</span>
+          <span class="chip">Power electronics</span>
+          <span class="chip">2D LiDAR</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: clamp(48px, 6vw, 72px);">
+      <div class="card reveal">
+        <span class="mono label">Resume</span>
+        <h4>Academic background</h4>
+        <ul class="clean-list" style="margin-top:0.75rem">
+          <li><strong>Courses:</strong> AP Physics C, AP Calculus BC, AP Computer Science A, and AP Research.</li>
+          <li><strong>Lab tools I use:</strong> oscilloscope, logic analyzer, bench power supply, soldering iron, and CAD software.</li>
+          <li><strong>Safety training:</strong> ISEF risk assessment and safety rules.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <span class="mono label">Past work</span>
+        <h4>Projects before this one</h4>
+        <ul class="clean-list" style="margin-top:0.75rem">
+          <li><strong>Camera obstacle avoidance:</strong> I used OpenCV on a Raspberry Pi to find edges in camera images and steer around objects.</li>
+          <li><strong>Motor control:</strong> I wrote <button type="button" class="term" data-term="pwm">PWM</button> code on an ESP32 to control motors and a speed controller.</li>
+          <li><strong>Simulated cars:</strong> I built simple car simulations for <button type="button" class="term" data-term="rl">reinforcement learning</button>.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <span class="mono label">Fun facts</span>
+        <h4>Outside the lab</h4>
+        <div style="margin-top:0.75rem">
+          <div class="fact-card"><span class="k">01</span><p>I'm a Formula 1 fan. Comparing lap times between drivers gave me the idea to compare lap times between the simulator and the real car.</p></div>
+          <div class="fact-card"><span class="k">02</span><p>I learned about electrical noise the hard way. That's why my car now has two separate power systems.</p></div>
+          <div class="fact-card"><span class="k">03</span><p>I can also drive the car myself with a USB steering wheel and pedals.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 PROCESS ================= -->
+<section class="block" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-index"><span class="n">02</span><span class="cat">Process</span></div>
+      <div>
+        <h2 class="sec-title">From question to <span class="serif">method</span></h2>
+        <p class="sec-lede">This section explains my research question, why it matters, the research I built on, and how I set up my experiment.</p>
+      </div>
+    </div>
+
+    <div class="question reveal">
+      <span class="mono">My research question</span>
+      <blockquote>If a self-driving RC car only gets a fixed amount of real-world practice, will it learn to race faster and use fewer resources if it practices on the tracks with the <em>biggest <button type="button" class="term" data-term="sim2real">simulation-to-reality gap</button></em> instead of on random tracks?</blockquote>
+      <div class="hypo">
+        <span class="mono">Hypothesis</span>
+        <p>If the car practices on the tracks where the simulator is most wrong, then it will learn to finish laps on new tracks using fewer real-world <button type="button" class="term" data-term="step">steps</button> and with fewer crashes than a car that practices on randomly chosen tracks.</p>
+      </div>
+    </div>
+
+    <!-- Ideation -->
+    <div class="sub-h reveal"><h3>Where the idea came from</h3><span class="mono">Ideation</span></div>
+    <div class="grid-3">
+      <div class="card constraint reveal">
+        <span class="mono label">In the simulator</span>
+        <div class="big">∞<small>steps</small></div>
+        <p>In a simulator, a <button type="button" class="term" data-term="rl">reinforcement learning</button> agent can practice for millions of steps overnight. Crashes cost nothing, and the car resets instantly.</p>
+      </div>
+      <div class="card constraint reveal">
+        <span class="mono label">On the real car</span>
+        <div class="big">~30<small>min</small></div>
+        <p>On the real car, every step uses battery, crashes can break parts, and I have to reset the car by hand. My whole budget is about 30 minutes of driving.</p>
+      </div>
+      <div class="card constraint reveal">
+        <span class="mono label">The gap in research</span>
+        <div class="big">?</div>
+        <p>Most <button type="button" class="term" data-term="curriculum">curriculum learning</button> methods assume practice is cheap or unlimited. I wanted to know how a robot should choose what to practice when real practice is limited.</p>
+      </div>
+    </div>
+
+    <!-- Methodology -->
+    <div class="sub-h reveal"><h3>How the experiment works</h3><span class="mono">Methodology</span></div>
+    <div class="pipeline reveal">
+      <div class="step">
+        <span class="n">01</span>
+        <h5>Train in the simulator</h5>
+        <p>I train a driving <button type="button" class="term" data-term="policy">policy</button> with <button type="button" class="term" data-term="ppo">PPO</button> in <button type="button" class="term" data-term="f1tenth">F1TENTH Gym</button>. The car "sees" using 108 <button type="button" class="term" data-term="lidar">LiDAR</button> distance readings plus its own speed and steering.</p>
+        <span class="where sim">Simulator</span>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <h5>Move it to the real car</h5>
+        <p>I convert the policy to <button type="button" class="term" data-term="onnx">ONNX</button> so it can run on the <button type="button" class="term" data-term="pi">Raspberry Pi 5</button>. The <button type="button" class="term" data-term="esp32">ESP32-S3</button> turns its decisions into steering and throttle signals.</p>
+        <span class="where real">Real car</span>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <h5>Measure the gap</h5>
+        <p>I run each practice track in the simulator and on the real car. I record the lap time and how much of the lap the car finishes.</p>
+        <span class="where both">Both</span>
+      </div>
+      <div class="step key">
+        <span class="n">04 · <button type="button" class="term" data-term="iv">Independent variable</button></span>
+        <h5>Choose the next track</h5>
+        <p><b>Control group:</b> pick a random track.<br><b>Test group:</b> pick the track with the biggest gap (Δ).</p>
+      </div>
+      <div class="step">
+        <span class="n">05</span>
+        <h5>Practice on the real car</h5>
+        <p>The car keeps learning from real laps on that track. I log every step, the total driving time, and every crash.</p>
+        <span class="where real">Real car</span>
+      </div>
+    </div>
+    <div class="loop-note"><span class="mono">↺ Repeat</span> I repeat steps 3–5 until the car has used all 15,000 real-world steps. Then I test it on 3 tracks it has never seen.</div>
+
+    <div class="formula reveal">
+      <div class="eq">Δ<sub>track</sub> = | <span class="r">t<sub>real</sub></span> − <span class="s">t<sub>sim</sub></span> |</div>
+      <p>This is my <button type="button" class="term" data-term="discrepancy">discrepancy score</button>. It is the difference between the real lap time and the simulated lap time on the same track. A big Δ means the simulator is wrong about that track, so I expect practice there to teach the car the most.</p>
+    </div>
+
+    <!-- Variables -->
+    <div class="sub-h reveal"><h3>Experimental design</h3><span class="mono">Variables</span></div>
+    <div class="vars">
+      <div class="card var-card iv reveal">
+        <span class="tag"><button type="button" class="term" data-term="iv">Independent variable</button></span>
+        <h4>How tracks are chosen</h4>
+        <dl>
+          <div><dt>Control group</dt><dd>Practice tracks are chosen at random.</dd></div>
+          <div><dt>Test group</dt><dd>The car practices on the track with the biggest gap between simulated and real lap time.</dd></div>
+        </dl>
+      </div>
+      <div class="card var-card dv reveal">
+        <span class="tag"><button type="button" class="term" data-term="dv">Dependent variables</button></span>
+        <h4>What I measure</h4>
+        <dl>
+          <div><dt>Training efficiency</dt><dd>How many real-world steps it takes to finish 3 laps in a row without crashing.</dd></div>
+          <div><dt>Resource cost</dt><dd>Total driving time and total number of crashes.</dd></div>
+          <div><dt><button type="button" class="term" data-term="generalization">Generalization</button></dt><dd>Average lap time and percent of the lap completed on 3 <button type="button" class="term" data-term="unseen">unseen tracks</button>.</dd></div>
+        </dl>
+      </div>
+      <div class="card var-card reveal">
+        <span class="tag"><button type="button" class="term" data-term="cv">Controlled variables</button></span>
+        <h4>What stays the same</h4>
+        <dl>
+          <div><dt>Hardware</dt><dd>The same car, Pi 5, ESP32-S3, and LD19 LiDAR for every run.</dd></div>
+          <div><dt>Learning method</dt><dd>PPO from <button type="button" class="term" data-term="sb3">Stable-Baselines3</button> with the same <button type="button" class="term" data-term="hyper">hyperparameters</button>.</dd></div>
+          <div><dt>Budget and trials</dt><dd>15,000 real-world steps per run and 5 runs per strategy, each with a different <button type="button" class="term" data-term="seed">random seed</button>. I compare the groups with <button type="button" class="term" data-term="welch">Welch's t-test</button> (α = 0.05).</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Literature -->
+    <div class="sub-h reveal"><h3>Research I built on</h3><span class="mono">Background literature</span></div>
+    <div class="lit">
+      <div class="card reveal">
+        <span class="yr">2009</span><span class="who">Bengio et al.</span>
+        <p class="what">Showed that teaching a model easy examples before hard ones, like a school curriculum, helps it learn better.</p>
+        <span class="venue">ICML</span>
+      </div>
+      <div class="card reveal">
+        <span class="yr">2020</span><span class="who">O'Kelly et al.</span>
+        <p class="what">Created F1TENTH, the 1/10-scale racing platform and simulator I use in this project.</p>
+        <span class="venue">NeurIPS Competition Track · PMLR</span>
+      </div>
+      <div class="card reveal">
+        <span class="yr">2021</span><span class="who">Dulac-Arnold et al.</span>
+        <p class="what">Explained why reinforcement learning is hard in the real world, including limited data and safety limits.</p>
+        <span class="venue">Machine Learning</span>
+      </div>
+      <div class="card reveal">
+        <span class="yr">2021</span><span class="who">Astudillo et al.</span>
+        <p class="what">Studied how to choose experiments when each one costs a different amount and the total budget is fixed.</p>
+        <span class="venue">NeurIPS</span>
+      </div>
+      <div class="card reveal">
+        <span class="yr">2024</span><span class="who">Rutherford et al.</span>
+        <p class="what">Tested ways to score training environments so an agent practices on the most useful ones next.</p>
+        <span class="venue">NeurIPS</span>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="sub-h reveal"><h3>Timeline</h3><span class="mono">Aug 2026 → Apr 2027</span></div>
+    <div class="timeline reveal">
+      <div class="phase done">
+        <span class="dot"></span>
+        <span class="when">Aug – Oct 2026</span>
+        <h5>Simulator and baseline</h5>
+        <p>I set up F1TENTH Gym, connected it to Stable-Baselines3, and trained a starting policy for 100,000 steps.</p>
+        <span class="status">Complete</span>
+      </div>
+      <div class="phase now">
+        <span class="dot"></span>
+        <span class="when">Nov 2026</span>
+        <h5>Building the car</h5>
+        <p>I'm assembling the car, wiring the Pi 5 to the ESP32-S3, separating the power systems, and testing the emergency stop.</p>
+        <span class="status">In progress</span>
+      </div>
+      <div class="phase">
+        <span class="dot"></span>
+        <span class="when">Dec 2026 – Feb 2027</span>
+        <h5>Real-world trials</h5>
+        <p>I'll do 5 runs for each strategy. Each run is limited to 15,000 real-world steps.</p>
+        <span class="status">Upcoming</span>
+      </div>
+      <div class="phase">
+        <span class="dot"></span>
+        <span class="when">Mar – Apr 2027</span>
+        <h5>Testing and writing</h5>
+        <p>I'll test on 3 new tracks, run the statistics, and write my paper and presentation.</p>
+        <span class="status">Upcoming</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 BUILD ================= -->
+<section class="block" id="build">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-index"><span class="n">03</span><span class="cat">Product · Build</span></div>
+      <div>
+        <h2 class="sec-title">The <span class="serif">machine</span></h2>
+        <p class="sec-lede">My car is a 1/10-scale RC car with two computers. A <button type="button" class="term" data-term="pi">Raspberry Pi 5</button> runs the driving policy, and an <button type="button" class="term" data-term="esp32">ESP32-S3</button> sends exact steering and throttle signals to the motors.</p>
+      </div>
+    </div>
+
+    <div class="cad reveal" id="cad">
+      <div id="cad-canvas"></div>
+      <span class="cad-corner tl"></span><span class="cad-corner tr"></span><span class="cad-corner bl"></span><span class="cad-corner br"></span>
+      <div class="cad-fallback" id="cad-fallback">The 3D model needs WebGL. Try a different browser to explore it.</div>
+      <div class="cad-hud top">
+        <div class="glass cad-badge"><span class="dot"></span><span class="mono">F1TENTH · 1/10 scale</span><span class="mono dim">Drag to orbit · scroll to zoom · click a part</span></div>
+        <div class="glass seg" role="group" aria-label="Camera view">
+          <button class="active" data-view="iso">Iso</button>
+          <button data-view="top">Top</button>
+          <button data-view="side">Side</button>
+          <button data-view="front">Front</button>
+        </div>
+      </div>
+      <div class="cad-hud bottom">
+        <div class="glass cad-slider">
+          <div class="row"><span class="mono">Explode view</span><b id="cad-slider-val">0%</b></div>
+          <input type="range" id="cad-explode-slider" min="0" max="100" value="0" aria-label="Explode view amount">
+          <div class="row mono" style="font-size:0.6rem"><span>Assembled</span><span>Exploded</span></div>
+        </div>
+        <div class="glass inspector">
+          <div class="name" id="cad-part-name">Select a subsystem</div>
+          <div class="desc" id="cad-part-desc">Click any part of the car, or pick one below, to see what it does.</div>
+          <div class="parts">
+            <button data-part="lidar">LiDAR</button>
+            <button data-part="rpi5">Pi 5</button>
+            <button data-part="esp32">ESP32-S3</button>
+            <button data-part="battery">Power</button>
+            <button data-part="powertrain">Motor + ESC</button>
+            <button data-part="servo">Steering</button>
+            <button data-part="susp_front">Suspension</button>
+            <button data-part="camera">Camera</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture -->
+    <div class="sub-h reveal"><h3>How the parts connect</h3><span class="mono">Power + data</span></div>
+    <div class="card arch reveal">
+      <div class="arch-scroll">
+        <svg viewBox="0 0 960 510" role="img" aria-label="Wiring diagram. The 2S LiPo battery feeds the ESC and a 5 volt UBEC. The UBEC powers the Raspberry Pi 5 through a 5 amp fuse. The ESC's built-in regulator powers the servo and ESP32-S3. The LiDAR sends scans to the Pi over USB; the Pi sends commands to the ESP32 over UART; the ESP32 sends PWM to the servo and ESC.">
+          <!-- wires: power -->
+          <path class="w-power flow" d="M190 382 H270"/>
+          <path class="w-power flow" d="M355 350 V262"/>
+          <path class="w-power flow" d="M355 198 V94"/>
+          <path class="w-power flow" d="M105 414 V480 H855 V414"/>
+          <path class="w-power flow" d="M855 350 V254"/>
+          <path class="w-power flow" d="M770 370 H690"/>
+          <path class="w-power flow" d="M585 350 V94"/>
+          <path class="w-power flow" d="M660 350 V150 H900 V94"/>
+          <!-- wires: data -->
+          <path class="w-data" d="M190 55 H270"/>
+          <path class="w-data" d="M440 62 H520"/>
+          <path class="w-data" d="M690 55 H770"/>
+          <path class="w-data" d="M690 80 H740 V400 H770"/>
+          <path class="w-wifi" d="M190 222 H230 V82 H270"/>
+          <!-- wire labels -->
+          <text class="wl" x="200" y="47">USB</text>
+          <text class="wl" x="448" y="54">UART</text>
+          <text class="wl" x="448" y="80">TX 8→19</text>
+          <text class="wl" x="448" y="92">RX 10←20</text>
+          <text class="wl" x="697" y="47">PWM 13</text>
+          <text class="wl" x="745" y="300">PWM 14</text>
+          <text class="wl w" x="20" y="274">Wi-Fi e-stop ↗</text>
+          <text class="wl p" x="198" y="374">7.4 V</text>
+          <text class="wl p" x="363" y="310">5 V</text>
+          <text class="wl p" x="363" y="150">fused 5 V</text>
+          <text class="wl p" x="430" y="498">7.4 V main power</text>
+          <text class="wl p" x="593" y="230">5 V BEC</text>
+          <text class="wl p" x="790" y="142">5 V BEC</text>
+          <!-- nodes -->
+          <g class="node"><rect x="20" y="30" width="170" height="64" rx="10"/><text class="t" x="36" y="58">LD19 LiDAR</text><text class="sub" x="36" y="78">360° · 2D SCAN</text></g>
+          <g class="node hot"><rect x="270" y="30" width="170" height="64" rx="10"/><text class="t" x="286" y="58">Raspberry Pi 5</text><text class="sub" x="286" y="78">POLICY · ONNX</text></g>
+          <g class="node hot"><rect x="520" y="30" width="170" height="64" rx="10"/><text class="t" x="536" y="58">ESP32-S3</text><text class="sub" x="536" y="78">REAL-TIME PWM</text></g>
+          <g class="node"><rect x="770" y="30" width="170" height="64" rx="10"/><text class="t" x="786" y="58">Steering servo</text><text class="sub" x="786" y="78">ACKERMANN</text></g>
+          <g class="node"><rect x="20" y="190" width="170" height="64" rx="10"/><text class="t" x="36" y="218">Host PC</text><text class="sub" x="36" y="238">SPACEBAR E-STOP</text></g>
+          <g class="node"><rect x="300" y="198" width="110" height="64" rx="10"/><text class="t" x="316" y="226">Fuse</text><text class="sub" x="316" y="246">5 A BLADE</text></g>
+          <g class="node"><rect x="770" y="190" width="170" height="64" rx="10"/><text class="t" x="786" y="218">Drive motor</text><text class="sub" x="786" y="238">540 BRUSHED</text></g>
+          <g class="node"><rect x="20" y="350" width="170" height="64" rx="10" style="stroke:#ff4f00;stroke-width:2"/><text class="t" x="36" y="378">2S LiPo</text><text class="sub" x="36" y="398">7.4 V · Y-SPLIT</text></g>
+          <g class="node"><rect x="270" y="350" width="170" height="64" rx="10"/><text class="t" x="286" y="378">ZORZA UBEC</text><text class="sub" x="286" y="398">COMPUTE 5 V</text></g>
+          <g class="node"><rect x="520" y="350" width="170" height="64" rx="10"/><text class="t" x="536" y="378">Actuator rail</text><text class="sub" x="536" y="398">WAGO 5 V + GND</text></g>
+          <g class="node"><rect x="770" y="350" width="170" height="64" rx="10"/><text class="t" x="786" y="378">JINOARC 1060</text><text class="sub" x="786" y="398">ESC + BEC</text></g>
+        </svg>
+      </div>
+      <div class="legend">
+        <span><i></i>Power</span><span><i class="d"></i>Data / signal</span><span><i class="w"></i>Wireless</span>
+        <span style="color:var(--muted)">All parts share a common ground through a wire from Pi pin 14.</span>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:1rem">
+      <div class="reveal">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pi 5</th><th>ESP32-S3</th><th>Wire</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>Pin 8</code> TXD0</td><td><code>GPIO 19</code> RX1</td><td><i class="wire" style="background:#2f9e44"></i>Green</td><td>Pi sends driving commands (<button type="button" class="term" data-term="uart">UART</button>)</td></tr>
+              <tr><td><code>Pin 10</code> RXD0</td><td><code>GPIO 20</code> TX1</td><td><i class="wire" style="background:#fcc419"></i>Yellow</td><td>ESP32 sends data back</td></tr>
+              <tr><td><code>Pin 14</code> GND</td><td>Actuator GND</td><td><i class="wire" style="background:#141413"></i>Black</td><td>Shared ground</td></tr>
+              <tr><td>—</td><td><code>GPIO 13</code></td><td><i class="wire" style="background:#fff"></i>White</td><td>Steering signal (<button type="button" class="term" data-term="pwm">PWM</button>)</td></tr>
+              <tr><td>—</td><td><code>GPIO 14</code></td><td><i class="wire" style="background:#fff"></i>White</td><td>Throttle signal to the <button type="button" class="term" data-term="esc">ESC</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card reveal">
+        <span class="mono label">Design decision</span>
+        <h4>Why does the car have two power systems?</h4>
+        <p>The drive motor pulls sudden bursts of current, which creates electrical noise. If the Pi shared that power, a hard acceleration could make it lose power and restart in the middle of a lap. To prevent this, the Pi has its own voltage regulator (a <button type="button" class="term" data-term="ubec">UBEC</button>) with a 5 A fuse. The <button type="button" class="term" data-term="servo">servo</button> and ESP32 get power from the <button type="button" class="term" data-term="esc">ESC</button>'s built-in regulator. The two systems only share a common ground.</p>
+      </div>
+    </div>
+
+    <div class="sub-h reveal"><h3>Parts list</h3><span class="mono">What I used</span></div>
+    <div class="bom reveal">
+      <div><span class="mono">Chassis</span><b>1/10 RWD RC car</b><p>Brushed 540 motor, steering servo</p></div>
+      <div><span class="mono">Compute</span><b>Raspberry Pi 5</b><p>Runs the driving policy</p></div>
+      <div><span class="mono">Controller</span><b>ESP32-S3</b><p>Sends steering and throttle signals</p></div>
+      <div><span class="mono">Sensor</span><b>WayPonDEV LD19 <button type="button" class="term" data-term="lidar">LiDAR</button></b><p>Measures distances all the way around the car</p></div>
+      <div><span class="mono">Motor control</span><b>JINOARC 1060 ESC</b><p>Controls motor speed; has a built-in 5 V regulator</p></div>
+      <div><span class="mono">Power</span><b>2S 7.4 V <button type="button" class="term" data-term="lipo">LiPo</button> battery</b><p>ZORZA 5 V UBEC, 5 A inline fuse, WAGO connectors</p></div>
+      <div><span class="mono">Vision</span><b>Pi Camera Module</b><p>Streams video from the car's point of view</p></div>
+      <div><span class="mono">Human driving</span><b>USB wheel + pedals</b><p>Lets me drive the car by hand from my computer</p></div>
+      <div><span class="mono">Software</span><b>Ubuntu · F1TENTH Gym</b><p>Plus Stable-Baselines3, PyTorch, and ONNX</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 DATA ================= -->
+<section class="block" id="data">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-index"><span class="n">04</span><span class="cat">Product · Data</span></div>
+      <div>
+        <h2 class="sec-title">Early <span class="serif">results</span></h2>
+        <p class="sec-lede">The first phase is done. I trained a starting policy in the simulator for 100,000 steps, and every number below comes straight from my training logs. The real-car experiment starts in December.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><span class="mono">Simulator training</span><div class="v">100k<small> steps</small></div><p>Trained with <button type="button" class="term" data-term="ppo">PPO</button> and a small neural network</p></div>
+      <div class="stat reveal"><span class="mono">First full lap</span><div class="v">~33k<small> steps</small></div><p>Before this, every practice run ended in a crash</p></div>
+      <div class="stat reveal"><span class="mono">Best test lap</span><div class="v">39.6<small> s</small></div><p>Down from 50.0 s on its first finished lap</p></div>
+      <div class="stat reveal"><span class="mono">Faster laps</span><div class="v">−21<small>%</small></div><p>On a 156.4 m track, about 3.9 m/s on average</p></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:1rem">
+      <div class="card chart-card reveal">
+        <h4>Score per practice run</h4>
+        <p class="note">Each point is one practice run (an <button type="button" class="term" data-term="episode">episode</button>). A higher score (<button type="button" class="term" data-term="return">return</button>) is better. The orange band shows my real-world budget.</p>
+        <div class="chart" id="chart-train"></div>
+        <details class="data-table"><summary>View data</summary><div id="table-train"></div></details>
+      </div>
+      <div class="card chart-card reveal">
+        <h4>Lap time during testing (seconds)</h4>
+        <p class="note">Average of 3 test laps at each <button type="button" class="term" data-term="checkpoint">checkpoint</button>. Lower is better.</p>
+        <div class="chart" id="chart-eval"></div>
+        <details class="data-table"><summary>View data</summary><div id="table-eval"></div></details>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <span class="mono">Why this matters</span>
+      <p>In the simulator, the car needed about 33,000 steps just to finish one lap. On the real car, I only get <em>15,000 steps in total.</em> That means the car can't learn from scratch in the real world. Every real step has to count, which is why I want to spend them where the simulator is most wrong.</p>
+    </div>
+
+    <div class="sub-h reveal"><h3>Real-car results</h3><span class="mono">Dec 2026 – Feb 2027</span></div>
+    <div class="pending">
+      <div class="card reveal"><span class="badge">Not completed yet</span><div class="v">— steps</div><h4>Training efficiency</h4><p>How many real-world steps each group needs to finish 3 clean laps.</p></div>
+      <div class="card reveal"><span class="badge">Not completed yet</span><div class="v">— crashes</div><h4>Resource cost</h4><p>Total crashes and driving time for each group.</p></div>
+      <div class="card reveal"><span class="badge">Not completed yet</span><div class="v">— %</div><h4>Generalization</h4><p>How well each group drives on 3 new tracks, compared with <button type="button" class="term" data-term="welch">Welch's t-test</button>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 PERSPECTIVE ================= -->
+<section class="block" id="perspective">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-index"><span class="n">05</span><span class="cat">Perspective</span></div>
+      <div>
+        <h2 class="sec-title">Why it <span class="serif">matters</span></h2>
+        <p class="sec-lede">What I'm learning, why this project matters to me, and who it could help. Some parts are not completed yet.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card reveal">
+        <span class="mono label">Inspiration</span>
+        <h4>Racing at the limit</h4>
+        <p>Race cars drive at the edge of grip, where small mistakes turn into crashes. That makes racing a tough test. If a car can learn to race safely with very little real practice, the same idea could help other robots learn safely too.</p>
+      </div>
+      <div class="card reveal">
+        <span class="mono label">Impact potential</span>
+        <h4>Where real practice is expensive</h4>
+        <p>Some robots can't afford to crash while they learn. Choosing what to practice more carefully could help them learn with less risk and cost.</p>
+        <div class="impact"><span>Planetary rovers</span><span>Search and rescue</span><span>Farm robots</span><span>Self-driving cars</span></div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:1rem">
+      <!-- PLACEHOLDER: Reflection -->
+      <div class="card ph reveal">
+        <span class="ph-badge">Placeholder</span>
+        <h4>Reflection</h4>
+        <p>Not completed yet.</p>
+      </div>
+      <!-- PLACEHOLDER: Empathy. Replace with a real conversation or interview. -->
+      <div class="card ph reveal">
+        <span class="ph-badge">Placeholder</span>
+        <h4>Empathy</h4>
+        <p>Not completed yet.</p>
+      </div>
+      <!-- PLACEHOLDER: Personal connection -->
+      <div class="card ph reveal">
+        <span class="ph-badge">Placeholder</span>
+        <h4>Why I chose this topic</h4>
+        <p>Not completed yet.</p>
+      </div>
+    </div>
+
+    <!-- Journal -->
+    <div class="sub-h reveal"><h3>Research journal</h3><span class="mono">Updated as I go</span></div>
+    <div class="journal reveal">
+      <div class="entry">
+        <span class="when">Oct 2026</span>
+        <div>
+          <h5>The simulator car finished its first laps</h5>
+          <p>After about 33,000 training steps, my policy finished a full lap in the simulator for the first time. By 100,000 steps, its best test lap was 39.6 seconds.</p>
+        </div>
+      </div>
+      <!-- PLACEHOLDER journal entries: replace with real notes. -->
+      <div class="entry ph-entry">
+        <span class="when">Nov 2026</span>
+        <div>
+          <h5>Placeholder</h5>
+          <p>Not completed yet.</p>
+        </div>
+      </div>
+      <div class="entry ph-entry">
+        <span class="when">Dec 2026</span>
+        <div>
+          <h5>Placeholder</h5>
+          <p>Not completed yet.</p>
+        </div>
+      </div>
+      <div class="entry ph-entry">
+        <span class="when">Jan 2027</span>
+        <div>
+          <h5>Placeholder</h5>
+          <p>Not completed yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-h reveal"><h3>Safety</h3><span class="mono">ISEF rules</span></div>
+    <div class="safety">
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/></svg></span>
+        <h4>Emergency stop</h4>
+        <p>Pressing the spacebar on my computer sends a wireless signal that stops the steering and motor right away.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2"/></svg></span>
+        <h4>Battery safety</h4>
+        <p>I charge and store the <button type="button" class="term" data-term="lipo">LiPo</button> battery in a fire-resistant bag, never leave it charging alone, and use a low-voltage alarm.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <h4>Supervised testing</h4>
+        <p>I test in a closed area with no bystanders. An adult sponsor supervises building, battery work, and fast test runs.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></span>
+        <h4>Soldering and disposal</h4>
+        <p>I wear eye protection and use a fume fan when soldering. A damaged battery gets fully drained and taken to a county e-waste site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= CONTACT ================= -->
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <span class="mono" style="color:var(--signal)">06 · Contact</span>
+    <h2 style="margin-top:1rem">Let's talk <span class="serif">robots.</span></h2>
+    <p>If you have questions about my project, robot learning, or the F1TENTH car, I'd love to hear from you.</p>
+    <div class="hero-ctas">
+      <a href="mailto:siddharth.tirumalareddi@example.com" class="btn btn-signal">Email me <span class="arrow">→</span></a>
+      <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    </div>
+
+    <div class="glossary" id="glossary">
+      <p class="mono" style="color:var(--night-muted)">Key terms</p>
+      <p class="glossary-note">Any underlined word on this page can be clicked for a quick definition. Here they all are in one place.</p>
+      <dl class="glossary-grid" id="glossary-list"></dl>
+    </div>
+
+    <p class="mono refs-title">References</p>
+    <ol class="refs">
+      <li><b>Astudillo, R., Jiang, D. R., Balandat, M., Bakshy, E., &amp; Frazier, P. I. (2021).</b> Multi-step budgeted Bayesian optimization with unknown evaluation costs. <i>Advances in Neural Information Processing Systems, 34</i>, 20197–20209.</li>
+      <li><b>Bengio, Y., Louradour, J., Collobert, R., &amp; Weston, J. (2009).</b> Curriculum learning. <i>Proceedings of the 26th Annual International Conference on Machine Learning</i>, 41–48.</li>
+      <li><b>Dulac-Arnold, G., Levine, N., Mankowitz, D. J., Li, J., Paduraru, C., Gowal, S., &amp; Hester, T. (2021).</b> Challenges of real-world reinforcement learning: Definitions, benchmarks and analysis. <i>Machine Learning, 110</i>(9), 2419–2468.</li>
+      <li><b>O'Kelly, M., Zheng, H., Karthik, D., &amp; Mangharam, R. (2020).</b> F1TENTH: An open-source evaluation environment for continuous control and reinforcement learning. <i>Proceedings of the NeurIPS 2019 Competition and Demonstration Track</i>, PMLR 123, 77–89.</li>
+      <li><b>Rutherford, A., Beukman, M., Willi, T., Lacerda, B., Hawes, N., &amp; Foerster, J. (2024).</b> No regrets: Investigating and improving regret approximations for curriculum discovery. <i>Advances in Neural Information Processing Systems, 37</i>, 16071–16101.</li>
+    </ol>
+  </div>
+  <div class="foot">
+    <div class="wrap">
+      <span class="mono">© 2026 Siddharth Tirumalareddi · AP Research Digital Portfolio</span>
+      <a href="#home" class="mono" style="text-decoration:none">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/glossary.js"></script>
+<script src="js/cad-viewer.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
