@@ -54,17 +54,3 @@ Right-click on `index.html` and choose **"Open with Live Server"**.
    ```
 3. In your GitHub repo settings, navigate to **Settings > Pages** and set source to `main` branch root `/`. Your portfolio will be live at `https://<username>.github.io/ap-research-portfolio/`.
 
----
-
-## 🤖 AI Context & Multi-Root Workspace
-
-This portfolio is configured inside `APRes_F1TENTH.code-workspace` alongside the research code:
-```json
-{
-  "folders": [
-    { "name": "F1TENTH Research Code", "path": "." },
-    { "name": "Digital Portfolio", "path": "../APRes_Digital_Portfolio" }
-  ]
-}
-```
-Whenever you update code, run new simulation epochs, or log physical test runs in `APRes_F1TENTH`, you can simply ask the AI agent in this workspace to sync the latest results, plots, or pinouts directly to the portfolio!
